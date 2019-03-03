@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  .btn-container.clearfix
+    include search-field
+    p.clearfix
+      a.button(href='/new-book') Create New Book
+  table
+    thead
+      tr
+        th Title
+        th Author
+        th Genre
+        th Year
+    tbody
+      include errors/books-not-found
+      each book in books
+        tr
+          td
+            a(href='/update-book/' + book.id)= book.title
+          td= book.author
+          td= book.genre
+          td= book.year
+  include pagination

@@ -1,0 +1,8 @@
+.pagination-container
+    ul.pagination-ul
+      -for (let i = 1; i <= lastPage; i++)
+        li
+          if i === startPage
+            a(class='active', href='/books/'+ searchPath +'&page=' + i )= i
+          else
+            a(class='paginationLink' + activePage, href='/books/'+ searchPath +'&page=' + i )= i

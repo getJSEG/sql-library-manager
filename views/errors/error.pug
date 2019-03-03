@@ -1,0 +1,8 @@
+extends ../layout
+
+block content
+    h1.error-header= error
+    h2.error-header= status
+    h2.error-message= message
+    .back-to-home
+      a.button(href='/books') Back To Home

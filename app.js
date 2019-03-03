@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-//Routes
+//All Routes
 app.use('/', indexRouter);
 app.use('/new-book', newBook);
 app.use('/update-book', updateBook);

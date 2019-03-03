@@ -1,97 +1,248 @@
+*{
+  margin:0;
+  padding:0;
+}
+
 body {
-  padding: 10px 50px 50px;
-  font: 18px "Garamond", serif;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #019875;
+  color: #727272;
   text-decoration: none;
-  font-weight: bold;
-  transition: 0.4s;
+  display: block;
+  width: 100%;
+  padding:10px 0 10px 5px;
 }
 
-  a:hover {
-    color: black;
-  }
-
-a.button, input[type=submit] {
-  color: white;
-  background: #019875;
-  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
-  padding: 10px 14px 12px;
-  font-size: 14px;
-  border-radius: 2px;
-  cursor: pointer;
+.table-name{
+  width: 100%;
+  margin:auto;
+  background-color: #0ad171;
+  color: #fff;
 }
 
-form a.button, input[type=submit] {
-  margin-left: 140px;
-  transition: 0.4s;
+h1{
+  text-transform: uppercase;
+  text-align: right;
+  letter-spacing: 5pt;
+  font-size: 25pt;
+  padding: 15px 50px 15px 0;
 }
 
-input[type=submit] {
-  border: 0;
+/*create btn */
+.button{
+  float: right;
+  width: 8em;
+  margin: 2em 0;
+  padding: 1em;
+  text-align: center;
+  border-radius: 0.5em;
+  background-color: #0ad171;
+  color: #fff;
 }
 
-  a.button:hover, input[type=submit]:hover {
-    background-color: #01b189;
-  }
-
-p {
-  margin: 20px auto;
+table, h1, .btn-container, form{
+  margin:auto;
+  position: relative;
+  width: 85%;
 }
 
-ul {
-  padding: 0;
-  list-style-type: none;
-  margin-bottom: 10px;
-  line-height: 1.3em;
+.btn-container{
+  display: inline;
+}
+/***table head**/
+tbody tr:nth-child(even){
+  background-color: #0ad171;
+}
+thead tr, tbody tr:nth-child(even), tbody tr:nth-child(even) td a{
+  color: #fff;
+}
+tbody tr:nth-child(odd), tbody tr:nth-child(odd) td a{
+  color: #333;
 }
 
-h2 {
-  border-top: 2px solid #e7e7e7;
-  padding-top: 20px;
+thead tr{
+  background-color: #a1a2a8;
 }
 
-th {
-  border-bottom: 2px solid #D8B493;
+thead tr th{
+  padding:0.75em 0;
+}
+
+/***table body **/
+tbody tr td{
+  margin:auto;
   text-align: left;
-  padding: 5px 20px 5px 10px;
+  padding-left: 0.5em;
+}
+tbody tr td:first-of-type:hover, form p input[type*="submit"]:hover{
+    cursor: pointer;
 }
 
-tr {
-  min-height: 50px;
+/******************************************NEW BOOK STYLE*******************************/
+form{
+  margin: 2em auto;
 }
 
-tr:nth-child(2n) {
-  background: #E7E7E7;
+form p label, form p input{
+  display: block;
 }
 
-td {
-  padding: 5px 20px 5px 10px;
+form p label{
+  padding: 1em 0 0.5em 0;
+  font-size: 12pt;
 }
 
-label {
-  font-weight: bold;
-  min-width: 130px;
-  display: inline-block;
-  transition: 0.4s;
+form p label::after {
+  content: ":";
 }
 
-input {
-  padding: 10px;
-  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  border-radius: 2px;
-  border-color: #E7E7E7;
-  transition: 0.4s;
+form p input{
+  width: 100%;
+  border-radius: .25em;
+  border: 1px solid #333;
+  padding: 0.5em 0;
+  padding-left: 0.5em;
 }
 
-input[type=text] {
-  margin-left: 7px;
-  width: 300px;
+p{
+  width: 35%;
+  margin: auto;
 }
 
-.error {
-  color: rgb(236, 15, 15);
+p:last-child{
+  clear: both;
+  width: 85%;
+  padding-top: 2em;
+  margin: auto;
+}
+
+.submit-new, .update-book, .delete{
+  margin: 2em 0;
+  padding: 1em;
+  text-align: center;
+  border-radius: 0.5em;
+  background-color: #0ad171;
+  border:none;
+  /* float: right; */
+  color: #fff;
+}
+
+/******************************************NEW BOOK STYLE*******************************/
+
+/******************************************UPDATE BOOK STYLE*******************************/
+.book-detail {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+.book-detail  a{
+  margin: 0 auto;
+  margin-top: 1.5em;
+  padding: 1em 0;
+  float:none;
+  padding-left: 0;
+  width: 85%;
+}
+.delete{
+  background-color: #d64d4d;
+}
+
+/******************************************END UPDATE BOOK STYLE*******************************/
+
+
+/*PAGINATION STYLE*/
+.pagination-container{
+    margin: auto;
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+    padding-bottom: 1em;
+    padding-top: 2em;
+}
+
+.pagination-container ul li{
+    display: inline-block;
+}
+
+.pagination-container ul li a{
+    width: 1.25em;
+    text-decoration: none;
+    color: gray;
+    display: inline-block;
+    border: 1px solid gray;
+    padding: 8px 10px;
+    margin: 3px 6px;
+    border-radius: 4px;
+}
+
+.pagination-container ul li a:hover{
+    background-color: #0ad171;
+    color: white;
+}
+
+.pagination-container ul li .active{
+    background-color: #0ad171;
+    color:#fff;
+    border:none;
+}
+/*END OF PAGINATION STYLE*/
+
+/*SEARCH FIELD*/
+.btn-container{
+  padding: 0;
+  margin: 0;
+}
+
+#search-input{
+    padding:10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+#search-submit:after{
+    padding: 5px;
+    content: "\2193";
+}
+/*END SEARCH FIELD*/
+.error-message, .errors, .error-header{
+  color:red;
+  text-transform: capitalize;
+}
+.errors{
+    padding: 1em 0 0.1em 5em;
+    font-size: 16px;
+    display:block;
+}
+
+.error-header, .error-message{
+    text-align: center;
+    margin: auto;
+    padding-top: 3em;
+}
+/* Back To Home Page Button */
+.back-to-home .button{
+  margin: auto;
+  margin-top: 2em;
+
+  float: none;
+}
+/*no content found*/
+.noContentFound{
+  position: absolute;
+  left: 35%;
+  top:4em;
+  color: red;
+  text-align: center;
+}
+
+
+/*Clear fix*/
+.clearfix {
+  overflow: auto;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
 }

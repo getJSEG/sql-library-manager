@@ -37,7 +37,7 @@ router.get('/books', function(req, res, next) {
 // all of the books that matches(title, author, genre, and year) with pagination
 //then we renders index with all of the books if theres isnt any books then it will set notFound to false
 //
-router.get('/books/:query', function(req, res, next) {
+router.get('/books/search/:query', function(req, res, next) {
   const query = req.query.query.toLowerCase();
   const page = req.query.page;
   let notFound = false;

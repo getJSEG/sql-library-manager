@@ -16,7 +16,7 @@ module.exports = {
   },
   searchSetter: ({...data}) => {
     searchQuery = data.query;
-    searchPath = 'search?query=' + searchQuery;
+    searchPath = '?query=' + searchQuery;
   }
   ,
   paginationGetter: () => {

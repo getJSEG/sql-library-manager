@@ -7,21 +7,24 @@ const filter = require('../module/filter');
 /* GET home page. */
 // gets the query from the pagination and search
 // so when the user press cancel it maintaines the prev. search book(s) and page of where they left off
-router.get('/', (req, res) => {
+router.get('/new', (req, res) => {
     res.render('new-book', { book:Book.build(), title:'New Book',
                              pagePath: filter.paginationGetter().pagePath,
-                             searchPath: filter.searchGetter().searchPath});
+                             searchPath: filter.searchGetter().searchPath });
 });
 
 //creating new book and redirects to the homepage
 // and add validation to all of the input fields
-router.post('/', (req, res) => {
+router.post('/new', (req, res) => {
   Book.create(req.body).then( (books) => {
     res.redirect('/');
   })
   .catch( err => {
     if(err.name === 'SequelizeValidationError'){
-      res.render('new-book', { book:Book.build(req.body), title:'New Book', errors: err.errors });
+      res.render('new-book', { book:Book.build(req.body), title:'New Book',
+                               errors: err.errors,
+                               pagePath: filter.paginationGetter().pagePath,
+                               searchPath: filter.searchGetter().searchPath });
     }else{
       throw err;
     }

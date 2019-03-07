@@ -24,8 +24,8 @@ app.use(cookieParser());
 
 //All Routes
 app.use('/', indexRouter);
-app.use('/new-book', newBook);
-app.use('/update-book', updateBook);
+app.use('/books', newBook);
+app.use('/books', updateBook);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

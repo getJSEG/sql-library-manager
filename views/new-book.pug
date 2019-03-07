@@ -2,7 +2,7 @@ extends layout
 
 block content
   include errors/validation-errors
-  form(action='/new-book', method='post')
+  form(action='/books/new', method='post')
     p
       label(for='title') Title
       input#title(name='title', type='text')
@@ -18,4 +18,4 @@ block content
     p
       input.submit-new(type='submit', value='Create New Book')
     p
-      a.button(href='/books/'+ searchPath + pagePath) Cancel
+      a.button(href='/books/search/book-search'+ searchPath + pagePath) Cancel

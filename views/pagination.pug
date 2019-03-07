@@ -3,6 +3,6 @@
       -for (let i = 1; i <= lastPage; i++)
         li
           if i === startPage
-            a(class='active', href='/books/'+ searchPath +'&page=' + i )= i
+            a(class='active', href='/books/search/book-search'+ searchPath +'&page=' + i )= i
           else
-            a(class='paginationLink' + activePage, href='/books/'+ searchPath +'&page=' + i )= i
+            a(class='paginationLink' + activePage, href='/books/search/book-search'+ searchPath +'&page=' + i )= i

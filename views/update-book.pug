@@ -2,7 +2,7 @@ extends layout.pug
 
 block content
   include errors/validation-errors
-  form(action='/update-book/' + book.id + '/update', method='post')
+  form(action='/books/' + book.id + '/update', method='post')
     p
       label(for='title') Title
       input#title(name='title', type='text', value= book.title)
@@ -17,8 +17,8 @@ block content
       input#year(name='year', type='text', value= book.year)
     p
       input.update-book(type='submit', value='Update Book')
-  form(action='/update-book/'+ book.id + '/delete', method='post', onsubmit="return confirm('Do you really want to delete this book?');")
+  form(action='/books/'+ book.id + '/delete', method='post', onsubmit="return confirm('Do you really want to delete this book?');")
     p.book-detail.clearfix
-      a.button(href='/books/'+ searchPath + pagePath) Cancel
+      a.button(href='/books/search/book-search'+ searchPath + pagePath) Cancel
     p
       input.delete(type='submit', value='Delete Book')

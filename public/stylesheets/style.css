@@ -204,6 +204,13 @@ p:last-child{
     padding: 5px;
     content: "\2193";
 }
+
+.search-submit{
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+}
 /*END SEARCH FIELD*/
 .error-message, .errors, .error-header{
   color:red;

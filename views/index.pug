@@ -4,7 +4,7 @@ block content
   .btn-container.clearfix
     include search-field
     p.clearfix
-      a.button(href='/new-book') Create New Book
+      a.button(href='/books/new') Create New Book
   table
     thead
       tr
@@ -17,7 +17,7 @@ block content
       each book in books
         tr
           td
-            a(href='/update-book/' + book.id)= book.title
+            a(href='/books/' + book.id)= book.title
           td= book.author
           td= book.genre
           td= book.year

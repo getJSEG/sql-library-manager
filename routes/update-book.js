@@ -8,18 +8,14 @@ const filter = require('../module/filter');
 //we call search and pagination getters
 //so when the user presses cancel it maintaines the prev. search book(s) query and page of where they left off
 router.get('/:id', (req, res, next) => {
-  const id = req.params.id ||1;
-  console.log('This is running first:1  ' + id);
-  Book.findById(id).then( books => {
-    if(books === null){
-      console.log('THIS IS NULL VALUE')
-    }
+  const id = req.params.id;
 
+  Book.findById(id).then( books => {
     res.render('update-book', { book:books,
                                 title:'update book',
                                 pagePath: filter.paginationGetter().pagePath,
                                 searchPath: filter.searchGetter().searchPath } );
-  }).catch( () => { res.redirect('/');  });
+  })
 });
 
 //Deletes entrance from the table and redirects to the home page
@@ -38,7 +34,6 @@ router.post('/:id/delete', (req, res, next) => {
 router.post('/:id/update', (req, res, next) => {
   const id = req.params.id;
   const bookInfo = req.body;
-
 
   Book.findById(id) .then(book => { return book.update(bookInfo);  })
   .then( () => { res.redirect('/') })
